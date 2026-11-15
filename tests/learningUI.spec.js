@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.only('Testing Initial Phase', async ({ page,browser }) => {
+test('Testing Initial Phase', async ({ page,browser }) => {
   await page.goto('https://itms.gctp.in');
   // Expect a title "to contain" a substring.
   await page.locator("[type='email']").fill('test_saikhanith@lnttest.com');
