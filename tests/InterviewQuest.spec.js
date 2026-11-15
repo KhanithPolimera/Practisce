@@ -3,7 +3,7 @@ import {test,expect} from '@playwright/test';
 const positions = ['Accountant', 'Software Engineer', 'Sales Assistant'];
 
 for (const position of positions) {
-  test.only(`Retrieve data for ${position}`, async ({ page }) => {
+  test(`Retrieve data for ${position}`,{tag:'@smoke'}, async ({ page }) => {
     await page.goto('https://datatables.net/examples/core/data_sources/ajax.html');
 
     const rows = page.locator('table tbody tr');
