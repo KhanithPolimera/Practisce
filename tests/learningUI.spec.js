@@ -11,7 +11,6 @@ test.only('Testing Initial Phase', async ({ page,browser }) => {
   session: localStorage.getItem('session'),
   user: localStorage.getItem('user'),
   userActivities: localStorage.getItem('userActivities')
-  console.log("First Test Case Completed")   //new line in Git HUb
 }));
 
 

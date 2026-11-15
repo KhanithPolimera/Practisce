@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main, master ]
 jobs:
-  test:
+  First-Job:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -17,6 +17,8 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+    - name: Check site reachability              # Can GitHub's machine reach the site at all?
+      run: curl -I -m 30 https://itms.gctp.in/ || true 
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v4
