@@ -2,10 +2,10 @@ name: Playwright Tests
 
 on:
   schedule:
-    - cron: '35 8 * * 0-6'
+    - cron: '0 10 * * 0-6'
 
 jobs:
-  First-Job:
+  Playwright-Job:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
