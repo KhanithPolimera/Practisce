@@ -14,7 +14,12 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
-  reporter: 'html',
+  reporter: [
+    ['html', { open: process.env.CI ? 'never' : 'on-failure' }],
+    ['allure-playwright'],
+    ['line'],
+    ['github']
+  ],
   timeout: 60000,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
